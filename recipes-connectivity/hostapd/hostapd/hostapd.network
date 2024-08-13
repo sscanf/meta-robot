@@ -1,0 +1,13 @@
+[Match]
+Name=uap0
+WLANInterfaceType=ap
+
+[Network]
+Address=192.168.0.1/24
+DHCPServer=true
+
+#[DHCPServer]
+#PoolOffset=128
+#PoolSize=32
+#EmitDNS=yes
+#DNS=8.8.8.8

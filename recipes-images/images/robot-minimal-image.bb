@@ -1,6 +1,6 @@
 inherit core-image
 
-SUMMARY = "ZOKeypad Minimal Image"
+SUMMARY = "ROBOT Minimal Image"
 DESCRIPTION = "Minimal image without graphical interface that just boots"
 
 LICENSE = "MIT"
@@ -36,13 +36,14 @@ IMAGE_LINGUAS = "en-us"
 TASK_BASIC_SSHDAEMON = "openssh openssh-sftp openssh-sftp-server"
 
 #packagegroup-tdx-graphical 
+#packagegroup-wifi-tdx-cli 
+
 
 TORADEX_GROUP = " \
     packagegroup-boot \
     packagegroup-basic \
     packagegroup-base-tdx-cli \
     packagegroup-machine-tdx-cli \
-    packagegroup-wifi-tdx-cli \
     packagegroup-wifi-fw-tdx-cli \
     packagegroup-tdx-cli \
     packagegroup-tdx-qt5 \
@@ -50,7 +51,4 @@ TORADEX_GROUP = " \
     ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'timestamp-service systemd-analyze', '', d)} \
 "
 
-IMAGE_INSTALL+= "${@bb.utils.contains("MACHINE", "qemux86-64", "","${TORADEX_GROUP}",d)} \
-    packagegroup-basic \
-"
                  

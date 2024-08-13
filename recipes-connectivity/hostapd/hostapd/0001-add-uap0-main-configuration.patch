@@ -1,0 +1,13 @@
+Index: connman-1.41/src/main.conf
+===================================================================
+--- connman-1.41.orig/src/main.conf
++++ connman-1.41/src/main.conf
+@@ -67,7 +67,7 @@ BackgroundScanning = false
+ # not be handled by ConnMan, if their first characters
+ # match any of the list entries. Default value is
+ # vmnet,vboxnet,virbr,ifb,ve-,vb-.
+-NetworkInterfaceBlacklist = vmnet,vboxnet,virbr,ifb,ve-,vb-,usb,rndis
++NetworkInterfaceBlacklist = vmnet,vboxnet,virbr,ifb,ve-,vb-,usb,rndis,uap0
+ 
+ # Allow ConnMan to change the system hostname. This can
+ # happen for example if we receive DHCP hostname option.

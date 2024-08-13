@@ -1,0 +1,22 @@
+Index: connman-1.41/src/main.conf
+===================================================================
+--- connman-1.41.orig/src/main.conf
++++ connman-1.41/src/main.conf
+@@ -23,7 +23,7 @@
+ # When BackgroundScanning is false, ConnMan will not perform any scan
+ # regardless of wifi is connected or not, unless it is requested by
+ # the user through a D-Bus call.
+-# BackgroundScanning = true
++ BackgroundScanning = false
+ 
+ # Assume that service gateways also function as timeservers.
+ # UseGatewaysAsTimeservers = false
+@@ -67,7 +67,7 @@
+ # not be handled by ConnMan, if their first characters
+ # match any of the list entries. Default value is
+ # vmnet,vboxnet,virbr,ifb,ve-,vb-.
+-# NetworkInterfaceBlacklist = vmnet,vboxnet,virbr,ifb,ve-,vb-
++NetworkInterfaceBlacklist = vmnet,vboxnet,virbr,ifb,ve-,vb-,usb,rndis,uap0
+ 
+ # Allow ConnMan to change the system hostname. This can
+ # happen for example if we receive DHCP hostname option.

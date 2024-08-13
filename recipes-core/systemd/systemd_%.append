@@ -1,0 +1,8 @@
+EXTRAPATHS:prepend := "${THISDIR}/systemd:"
+ 
+SRC_URI += "file://rndis.network"
+ 
+PACKAGECONFIG:append = " networkd iptc"
+ 
+PACKAGECONFIG[acl] = "-Dacl=true,-Dacl=false,acl"
+

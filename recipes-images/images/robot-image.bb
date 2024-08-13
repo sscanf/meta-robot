@@ -1,4 +1,5 @@
 require recipes-images/images/robot-minimal-image.bb
+#require recipes-images/images/tdx-reference-minimal-image.bb
 
 SUMMARY = "Robot image"
 DESCRIPTION = "Robot image for Toradex imx8"
@@ -7,6 +8,8 @@ inherit populate_sdk_qt5
 
 #Prefix to the resulting deployable tarball name
 export IMAGE_BASENAME = "robot-image"
+
+TOOLCHAIN_TARGET_TASK:append = " kernel-devsrc"
 
 IMAGE_CLASSES += "image_type_tezi"
 IMAGE_FSTYPES = "tar.xz teziimg"
@@ -22,6 +25,7 @@ IMAGE_FEATURES += " \
                                                        '', d), d)} \
 "
 CONMANPKGS ?= "connman connman-plugin-loopback connman-plugin-ethernet connman-plugin-wifi connman-client"
+
 
 GSTREAMER_1_0_GROUP = "      \
     gstreamer1.0             \
@@ -43,7 +47,10 @@ IMAGE_INSTALL += " \
     \
     ${CONMANPKGS} \
     ${GSTREAMER_1_0_GROUP} \
-    \
+    sip3-dev \
+    python3-pyqt5 \
+    python3-pip \
+    connman \
     bash \
     coreutils \
     less \
@@ -52,8 +59,11 @@ IMAGE_INSTALL += " \
     util-linux \
     v4l-utils \
     opencv \
-    \
-    gpicview    \
-    media-files \
-    \
+    wpa-supplicant \
+    libsoc    \
+    hostapd \
+    wireless-regdb-static \
+    packagegroup-basic  \
 "
+
+IMAGE_INSTALL += "${@bb.utils.contains("MACHINE", "qemux86-64", "","${TORADEX_GROUP}",d)}"

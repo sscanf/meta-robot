@@ -1,8 +1,6 @@
 FILESEXTRAPATHS:append:= "${THISDIR}/${PN}:"
 
-SRC_URI += "file://0001-add-uap0-main-configuration.patch \
-            file://0002-connman-clock-ntp-client-should-not-update-time-time.patch \
-            file://settings \
+SRC_URI += " file://settings \
 "
 
 do_install:append() {

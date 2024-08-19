@@ -12,7 +12,8 @@ SRCREV = "${AUTOREV}"
 S = "${WORKDIR}/git"
 #LIC_FILES_CHKSUM = "file://LICENSE;md5=ebf58d893aeb1315372c831a3b7813b7"
 #LIC_FILES_CHKSUM = "file://LICENSE;md5=5c900cc124ba35a274073b5de7639b13"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=8f533bc367bfd43f556b6f782234c076"
+#LIC_FILES_CHKSUM = "file://LICENSE;md5=8f533bc367bfd43f556b6f782234c076"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=0fdbfbe10fc294a6fca24dc76134222a"
 
 SRC_URI =  "git://github.com/glennrp/libpng.git;branch=master;protocol=https \
             file://0001-solved-png-width-large-chunk-metadata.diff \

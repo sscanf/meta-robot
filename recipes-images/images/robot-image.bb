@@ -38,6 +38,8 @@ GSTREAMER_1_0_GROUP = "      \
     libgstcodecparsers-1.0   \
 "
 
+#sip3-dev
+#
 IMAGE_INSTALL += " \
     ${@bb.utils.contains('DISTRO_FEATURES', 'wayland', \
                          'weston weston-init weston-examples ${APP_LAUNCH_WAYLAND}', '', d)} \
@@ -47,12 +49,10 @@ IMAGE_INSTALL += " \
     \
     ${CONMANPKGS} \
     ${GSTREAMER_1_0_GROUP} \
-    sip3-dev \
     python3-pyqt5 \
     python3-pip \
     connman \
-    bash \
-    coreutils \
+    busybox \
     less \
     makedevs \
     mime-support \
@@ -64,6 +64,7 @@ IMAGE_INSTALL += " \
     hostapd \
     wireless-regdb-static \
     packagegroup-basic  \
+    tensorflow-lite \
 "
 
 IMAGE_INSTALL += "${@bb.utils.contains("MACHINE", "qemux86-64", "","${TORADEX_GROUP}",d)}"
